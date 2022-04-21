@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.management.system.RegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.management.system.RegisterController">
    <children>
       <TextField fx:id="fullName" layoutX="153.0" layoutY="57.0" prefHeight="26.0" prefWidth="294.0" promptText="Full name" />
       <TextField fx:id="confirmPassword" layoutX="153.0" layoutY="193.0" prefHeight="26.0" prefWidth="294.0" promptText="Confirm Password" />
