@@ -13,11 +13,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,6 +27,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -65,6 +66,8 @@ public class SellsController implements Initializable {
 
     @FXML
     private TableColumn<ProductModel, Integer> productTSellP;
+    @FXML
+    private TableColumn<ProductModel, Integer> productSellsId;
     
     @FXML
     private TextField productQuantity;
@@ -117,38 +120,54 @@ public class SellsController implements Initializable {
         statement.setInt(1,id);
         statement.setInt(2,quantity);
         statement.execute();
-// Done the insertion
-    
-//        Fetch all product from database
-//        sqlQuery = "SELECT * FROM `products` WHERE productId = ?";
-//        statement = conn.prepareStatement(sqlQuery);
-//        statement.setInt(1,id);
-//        ResultSet resultSet = statement.executeQuery(sqlQuery);
-        
-//        End fatching product
-//    System.out.println(resultSet.getString(2));
-//        ProductModel newProduct = new ProductModel(id, name, category, brand, quantity, purses, sell);
-//        productTable.getItems().add(newProduct);
-//        Empty the field
-//        productIdDropDown.setSelectionModel("");
-//        productQuantity.setText("");
+        productQuantity.setText("");
+    }
+    @FXML
+    void refreshSellList(ActionEvent event){
+        //        Fetch all product from database
+        String productQuery = "SELECT * FROM sells INNER JOIN products ON sells.productId=products.productId";
+        ResultSet productSet = null;
+        try {
+            productSet = connect.SelectQuery(productQuery,conn);
+        } catch (SQLException ex) {
+            Logger.getLogger(StoreController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            productsModels.clear();
+            while(productSet.next()){
+                productsModels.add(
+                        new ProductModel(
+                                Integer.parseInt(productSet.getString(4)), 
+                                productSet.getString(5), 
+                                productSet.getString(6), 
+                                productSet.getString(7), 
+                                Integer.parseInt(productSet.getString(8)), 
+                                Integer.parseInt(productSet.getString(9)), 
+                                Integer.parseInt(productSet.getString(10)),
+                                Integer.parseInt(productSet.getString(1))
+                        )
+                );
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(StoreController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     void productRemoveAction(ActionEvent event) throws SQLException {
-//        ObservableList<ProductModel> allProduct, singleProduct;
-//        allProduct = productTable.getItems();
-//        singleProduct = productTable.getSelectionModel().getSelectedItems();
-////        Delete the product from database
-//        String sqlQuery = "DELETE FROM `products` WHERE productId = ?";
-//
-//        PreparedStatement statement = conn.prepareStatement(sqlQuery);
-//        int productId = singleProduct.get(0).getProductId();
-//        statement.setInt(1,productId);
-//        statement.execute();
-////        Done delete
-//
-//        singleProduct.forEach(allProduct::remove);
+        ObservableList<ProductModel> allProduct, singleProduct;
+        allProduct = productTable.getItems();
+        singleProduct = productTable.getSelectionModel().getSelectedItems();
+//        Delete the product from database
+        String sqlQuery = "DELETE FROM `sells` WHERE sellId = ?";
+
+        PreparedStatement statement = conn.prepareStatement(sqlQuery);
+        int sellsId = singleProduct.get(0).getSellsId();
+        statement.setInt(1,sellsId);
+        statement.execute();
+//        Done delete
+
+        singleProduct.forEach(allProduct::remove);
     }
     
     @FXML
@@ -227,6 +246,44 @@ public class SellsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+        productTId.setCellValueFactory(new PropertyValueFactory<>("ProductId"));
+        productTName.setCellValueFactory(new PropertyValueFactory<>("ProductName"));
+        productTCat.setCellValueFactory(new PropertyValueFactory<>("ProductCategory"));
+        productTBrand.setCellValueFactory(new PropertyValueFactory<>("ProductBrand"));
+        productTQuantity.setCellValueFactory(new PropertyValueFactory<>("ProductQuantity"));
+        productTSellP.setCellValueFactory(new PropertyValueFactory<>("ProductSellPrice"));
+        productSellsId.setCellValueFactory(new PropertyValueFactory<>("SellsId"));
+        //add your data to the table here.
+        productTable.setItems(productsModels);
+        
+        //        Fetch all product from database
+        String productQuery = "SELECT * FROM sells INNER JOIN products ON sells.productId=products.productId";
+        ResultSet productSet = null;
+        try {
+            productSet = connect.SelectQuery(productQuery,conn);
+        } catch (SQLException ex) {
+            Logger.getLogger(StoreController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            productsModels.clear();
+            while(productSet.next()){
+                productsModels.add(
+                        new ProductModel(
+                                Integer.parseInt(productSet.getString(4)), 
+                                productSet.getString(5), 
+                                productSet.getString(6), 
+                                productSet.getString(7), 
+                                Integer.parseInt(productSet.getString(8)), 
+                                Integer.parseInt(productSet.getString(9)), 
+                                Integer.parseInt(productSet.getString(10)),
+                                Integer.parseInt(productSet.getString(1))
+                        )
+                );
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(StoreController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         //        Fetch all product from database
         String sql = "Select * From products";

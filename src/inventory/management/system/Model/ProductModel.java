@@ -21,6 +21,8 @@ public class ProductModel {
     private SimpleIntegerProperty productPursesPrice;
     private SimpleIntegerProperty productSellPrice;
     
+    private SimpleIntegerProperty sellsId;
+    
     public ProductModel(Integer productId, String productName, String productCategory, String productBrand, Integer productQuantity, Integer productPursesPrice, Integer productSellPrice ){
         this.productId = new SimpleIntegerProperty(productId);
         this.productName = new SimpleStringProperty(productName);
@@ -29,6 +31,24 @@ public class ProductModel {
         this.productQuantity = new SimpleIntegerProperty(productQuantity);
         this.productPursesPrice = new SimpleIntegerProperty(productPursesPrice);
         this.productSellPrice = new SimpleIntegerProperty(productSellPrice);
+    }
+    
+    public ProductModel(Integer productId, String productName, String productCategory, String productBrand, Integer productQuantity, Integer productPursesPrice, Integer productSellPrice, Integer sellsId ){
+        this.productId = new SimpleIntegerProperty(productId);
+        this.productName = new SimpleStringProperty(productName);
+        this.productCategory = new SimpleStringProperty(productCategory);
+        this.productBrand = new SimpleStringProperty(productBrand);
+        this.productQuantity = new SimpleIntegerProperty(productQuantity);
+        this.productPursesPrice = new SimpleIntegerProperty(productPursesPrice);
+        this.productSellPrice = new SimpleIntegerProperty(productSellPrice);
+        this.sellsId = new SimpleIntegerProperty(sellsId);
+    }
+    
+    public Integer getSellsId(){
+        return sellsId.get();
+    }
+    public void setSellsId(int sellsId){
+        this.sellsId = new SimpleIntegerProperty(sellsId);
     }
     
     public Integer getProductId(){

@@ -100,6 +100,22 @@ public class HomeController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(StoreController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        //        Fetch all product from database
+        String sellsQuery = "SELECT * FROM sells INNER JOIN products ON sells.productId=products.productId";
+        ResultSet sellsSet = null;
+        try {
+            sellsSet = connect.SelectQuery(sellsQuery,conn);
+        } catch (SQLException ex) {
+            Logger.getLogger(StoreController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            while(sellsSet.next()){
+                totalSell += (Integer.parseInt(sellsSet.getString(10)) * Integer.parseInt(sellsSet.getString(3)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(StoreController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 //        Fetch all employe from database
 
         String employeQuery = "Select * From employes";
