@@ -6,7 +6,6 @@
 package inventory.management.system;
 
 import inventory.management.system.Database.DBConnect;
-import inventory.management.system.Model.ProductModel;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;

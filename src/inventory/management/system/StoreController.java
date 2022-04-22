@@ -190,7 +190,6 @@ public class StoreController implements Initializable {
 
         PreparedStatement statement = conn.prepareStatement(sqlQuery);
         int productId = singleProduct.get(0).getProductId();
-        System.out.println(productId);
         statement.setInt(1,productId);
         statement.execute();
 //        Done delete

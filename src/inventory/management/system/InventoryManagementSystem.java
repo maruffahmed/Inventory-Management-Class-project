@@ -25,7 +25,7 @@ public class InventoryManagementSystem extends Application {
         try {
             Image icon = new Image(getClass().getResourceAsStream("assets/icon.png"));
         
-            Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Employes.fxml"));
 
             Scene scene = new Scene(root);
 
