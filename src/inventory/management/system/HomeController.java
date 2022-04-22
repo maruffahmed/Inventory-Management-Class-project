@@ -5,17 +5,20 @@
  */
 package inventory.management.system;
 
+import inventory.management.system.Database.DBConnect;
+import inventory.management.system.Model.ProductModel;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -24,8 +27,28 @@ import javafx.stage.Stage;
  */
 public class HomeController implements Initializable {
 
-    
+    //    Database connection
+    static public DBConnect connect = new DBConnect();
+    static public Connection conn = connect.getConnection();
+//    Custom class for scene change
     SceneRender ChangeMyScene = new SceneRender();
+    
+    private int totalProduct = 0;
+    private int totalEmployes = 0;
+    private int stockPrice = 0;
+    private int totalSell = 0;
+    
+    @FXML
+    private Label totalEmploye;
+
+    @FXML
+    private Label totalProductsStored;
+
+    @FXML
+    private Label totalSellPrice;
+
+    @FXML
+    private Label totalStockPrice;
     
     @FXML
     void gotoAbout(MouseEvent event) throws IOException {
@@ -62,6 +85,43 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        //        Fetch all product from database
+        String productQuery = "Select * From products";
+        ResultSet productSet = null;
+        try {
+            productSet = connect.SelectQuery(productQuery,conn);
+        } catch (SQLException ex) {
+            Logger.getLogger(StoreController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            while(productSet.next()){
+                totalProduct++;
+                stockPrice += Integer.parseInt(productSet.getString(7));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(StoreController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//        Fetch all employe from database
+
+        String employeQuery = "Select * From employes";
+        ResultSet employeSet = null;
+        try {
+            employeSet = connect.SelectQuery(employeQuery,conn);
+        } catch (SQLException ex) {
+            Logger.getLogger(StoreController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            while(employeSet.next()){
+                totalEmployes++;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(StoreController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        totalProductsStored.setText(Integer.toString(totalProduct));
+        totalEmploye.setText(Integer.toString(totalEmployes));
+        totalStockPrice.setText(Integer.toString(stockPrice));
+        totalSellPrice.setText(Integer.toString(totalSell));
     }    
     
 }

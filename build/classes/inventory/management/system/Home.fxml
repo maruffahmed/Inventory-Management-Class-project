@@ -108,26 +108,26 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fceaea;">
                <children>
-                  <Label layoutX="2.0" layoutY="66.0" prefHeight="18.0" prefWidth="409.0" style="-fx-alignment: center;" text="1.4k">
+                  <Label fx:id="totalProductsStored" layoutX="2.0" layoutY="66.0" prefHeight="18.0" prefWidth="409.0" style="-fx-alignment: center;" text="10">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="1.0" layoutY="112.0" prefHeight="18.0" prefWidth="410.0" style="-fx-alignment: center;" text="Stock produtcs" textFill="#969393">
+                  <Label layoutX="1.0" layoutY="112.0" prefHeight="18.0" prefWidth="410.0" style="-fx-alignment: center;" text="Total products" textFill="#969393">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e5f8ed;" GridPane.columnIndex="1">
+            <AnchorPane prefHeight="202.0" prefWidth="394.0" style="-fx-background-color: #e5f8ed;" GridPane.columnIndex="1">
                <children>
-                  <Label layoutX="2.0" layoutY="66.0" prefHeight="18.0" prefWidth="409.0" style="-fx-alignment: center;" text="\$9745">
+                  <Label fx:id="totalEmploye" layoutX="2.0" layoutY="66.0" prefHeight="18.0" prefWidth="409.0" style="-fx-alignment: center;" text="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="1.0" layoutY="112.0" prefHeight="18.0" prefWidth="410.0" style="-fx-alignment: center;" text="Revenue" textFill="#969393">
+                  <Label layoutX="1.0" layoutY="112.0" prefHeight="18.0" prefWidth="410.0" style="-fx-alignment: center;" text="Employes" textFill="#969393">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -136,12 +136,12 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e0f9fc;" GridPane.rowIndex="1">
                <children>
-                  <Label layoutX="2.0" layoutY="66.0" prefHeight="18.0" prefWidth="409.0" style="-fx-alignment: center;" text="1.4k">
+                  <Label fx:id="totalStockPrice" layoutX="2.0" layoutY="66.0" prefHeight="18.0" prefWidth="409.0" style="-fx-alignment: center;" text="50">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="1.0" layoutY="112.0" prefHeight="18.0" prefWidth="410.0" style="-fx-alignment: center;" text="Total sales" textFill="#969393">
+                  <Label layoutX="1.0" layoutY="112.0" prefHeight="18.0" prefWidth="410.0" style="-fx-alignment: center;" text="Stock price" textFill="#969393">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -150,12 +150,12 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeedfd;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Label layoutX="2.0" layoutY="66.0" prefHeight="18.0" prefWidth="409.0" style="-fx-alignment: center;" text="8.549k">
+                  <Label fx:id="totalSellPrice" layoutX="2.0" layoutY="66.0" prefHeight="18.0" prefWidth="409.0" style="-fx-alignment: center;" text="1000">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="1.0" layoutY="112.0" prefHeight="18.0" prefWidth="410.0" style="-fx-alignment: center;" text="Happy customers" textFill="#969393">
+                  <Label layoutX="1.0" layoutY="112.0" prefHeight="18.0" prefWidth="410.0" style="-fx-alignment: center;" text="Total sell" textFill="#969393">
                      <font>
                         <Font size="20.0" />
                      </font>
