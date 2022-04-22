@@ -22,9 +22,7 @@ import javafx.stage.Stage;
  *
  * @author maruf
  */
-public class HomeController implements Initializable {
-
-    
+public class SettingsController implements Initializable {
     @FXML
     void gotoAbout(MouseEvent event) throws IOException {
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -96,6 +94,7 @@ public class HomeController implements Initializable {
         stage.setTitle("Store - Signal Icon");
         stage.show();
     }
+
     /**
      * Initializes the controller class.
      */

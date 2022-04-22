@@ -22,8 +22,7 @@ import javafx.stage.Stage;
  *
  * @author maruf
  */
-public class HomeController implements Initializable {
-
+public class StoreController implements Initializable {
     
     @FXML
     void gotoAbout(MouseEvent event) throws IOException {

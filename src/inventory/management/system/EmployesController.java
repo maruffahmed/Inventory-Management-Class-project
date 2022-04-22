@@ -22,8 +22,7 @@ import javafx.stage.Stage;
  *
  * @author maruf
  */
-public class HomeController implements Initializable {
-
+public class EmployesController implements Initializable {
     
     @FXML
     void gotoAbout(MouseEvent event) throws IOException {
@@ -96,6 +95,7 @@ public class HomeController implements Initializable {
         stage.setTitle("Store - Signal Icon");
         stage.show();
     }
+
     /**
      * Initializes the controller class.
      */
