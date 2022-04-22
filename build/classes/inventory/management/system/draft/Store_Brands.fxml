@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="662.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.management.system.StoreController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="662.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.management.system.Store_BrandsController">
    <children>
       <VBox prefHeight="662.0" prefWidth="100.0" style="-fx-background-color: #ddd;">
          <children>
@@ -98,9 +98,9 @@
             <Font size="25.0" />
          </font>
       </Label>
-<!--      <HBox layoutX="449.0" layoutY="13.0" prefHeight="64.0" prefWidth="465.0" style="-fx-border-color: #ddd; -fx-border-width: 2px;">
+      <HBox layoutX="449.0" layoutY="13.0" prefHeight="64.0" prefWidth="465.0" style="-fx-border-color: #ddd; -fx-border-width: 2px;">
          <children>
-            <AnchorPane onMouseClicked="#gotoStock" prefHeight="64.0" prefWidth="89.0" style="-fx-background-color: #fceaea;">
+            <AnchorPane onMouseClicked="#gotoStock" prefHeight="64.0" prefWidth="89.0">
                <children>
                   <Label alignment="CENTER" layoutX="1.0" layoutY="20.0" prefHeight="18.0" prefWidth="90.0" text="Stock" />
                </children>
@@ -116,7 +116,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </AnchorPane>
-            <AnchorPane onMouseClicked="#gotoBrands" prefHeight="64.0" prefWidth="89.0">
+            <AnchorPane onMouseClicked="#gotoBrands" prefHeight="64.0" prefWidth="89.0" style="-fx-background-color: #fceaea;">
                <children>
                   <Label alignment="CENTER" layoutX="1.0" layoutY="20.0" prefHeight="18.0" prefWidth="90.0" text="Brands" />
                </children>
@@ -141,6 +141,6 @@
                </cursor>
             </AnchorPane>
          </children>
-      </HBox>-->
+      </HBox>
    </children>
 </AnchorPane>

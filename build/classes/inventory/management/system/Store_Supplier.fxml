@@ -2,6 +2,8 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="662.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.management.system.StoreController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="662.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.management.system.Store_SupplierController">
    <children>
       <VBox prefHeight="662.0" prefWidth="100.0" style="-fx-background-color: #ddd;">
          <children>
@@ -93,14 +95,14 @@
             </AnchorPane>
          </children>
       </VBox>
-      <Label layoutX="114.0" layoutY="27.0" text="Store">
+      <Label layoutX="114.0" layoutY="27.0" text="Supplier">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-<!--      <HBox layoutX="449.0" layoutY="13.0" prefHeight="64.0" prefWidth="465.0" style="-fx-border-color: #ddd; -fx-border-width: 2px;">
+      <HBox layoutX="449.0" layoutY="13.0" prefHeight="64.0" prefWidth="465.0" style="-fx-border-color: #ddd; -fx-border-width: 2px;">
          <children>
-            <AnchorPane onMouseClicked="#gotoStock" prefHeight="64.0" prefWidth="89.0" style="-fx-background-color: #fceaea;">
+            <AnchorPane onMouseClicked="#gotoStock" prefHeight="64.0" prefWidth="89.0">
                <children>
                   <Label alignment="CENTER" layoutX="1.0" layoutY="20.0" prefHeight="18.0" prefWidth="90.0" text="Stock" />
                </children>
@@ -108,7 +110,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </AnchorPane>
-            <AnchorPane onMouseClicked="#gotoSupplier" prefHeight="64.0" prefWidth="89.0">
+            <AnchorPane onMouseClicked="#gotoSupplier" prefHeight="64.0" prefWidth="89.0" style="-fx-background-color: #fceaea;">
                <children>
                   <Label alignment="CENTER" layoutX="1.0" layoutY="20.0" prefHeight="18.0" prefWidth="90.0" text="Supplier" />
                </children>
@@ -141,6 +143,13 @@
                </cursor>
             </AnchorPane>
          </children>
-      </HBox>-->
+      </HBox>
+      <TableView fx:id="suppliersTable" layoutX="114.0" layoutY="91.0" prefHeight="326.0" prefWidth="800.0">
+        <columns>
+          <TableColumn fx:id="supplierName" minWidth="20.0" prefWidth="150.0" text="Name" />
+          <TableColumn fx:id="supplierContact" prefWidth="300.0" text="Contact" />
+          <TableColumn fx:id="supplierDesciption" prefWidth="300.0" text="Description" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

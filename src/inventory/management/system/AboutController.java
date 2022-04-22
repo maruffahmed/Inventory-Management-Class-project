@@ -24,76 +24,36 @@ import javafx.stage.Stage;
  */
 public class AboutController implements Initializable {
     
+    SceneRender ChangeMyScene = new SceneRender();
+    
     @FXML
     void gotoAbout(MouseEvent event) throws IOException {
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("About.fxml"));
-     
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.setTitle("About - Signal Icon");
-        stage.show();
+        ChangeMyScene.to("About.fxml", "About - Signal Icon", event);
     }
 
     @FXML
     void gotoEmp(MouseEvent event) throws IOException {
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("Employes.fxml"));
-     
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.setTitle("Employes - Signal Icon");
-        stage.show();
+        ChangeMyScene.to("Employes.fxml", "Employes - Signal Icon", event);
     }
 
     @FXML
     void gotoHome(MouseEvent event) throws IOException {
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-     
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.setTitle("Home - Signal Icon");
-        stage.show();
+        ChangeMyScene.to("Home.fxml", "Home - Signal Icon", event);
     }
 
     @FXML
     void gotoSells(MouseEvent event) throws IOException {
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("Sells.fxml"));
-     
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.setTitle("Sells - Signal Icon");
-        stage.show();
+        ChangeMyScene.to("Sells.fxml", "Sells - Signal Icon", event);
     }
 
     @FXML
     void gotoSettings(MouseEvent event) throws IOException {
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
-     
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.setTitle("Settings - Signal Icon");
-        stage.show();
+        ChangeMyScene.to("Settings.fxml", "Settings - Signal Icon", event);
     }
     
     @FXML
     void gotoStore(MouseEvent event) throws IOException {
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("Store.fxml"));
-     
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.setTitle("Store - Signal Icon");
-        stage.show();
+        ChangeMyScene.to("Store.fxml", "Store - Signal Icon", event);
     }
 
     /**

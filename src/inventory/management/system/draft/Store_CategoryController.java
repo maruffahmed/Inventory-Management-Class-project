@@ -9,20 +9,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
  * @author maruf
  */
-public class StoreController implements Initializable {
+public class Store_CategoryController implements Initializable {
     
     SceneRender ChangeMyScene = new SceneRender();
     
@@ -57,26 +52,27 @@ public class StoreController implements Initializable {
     }
     
     //    Store inner navigation
-//    @FXML
-//    void gotoStock(MouseEvent event) throws IOException {
-//        ChangeMyScene.to("Store.fxml", "Store - Signal Icon", event);
-//    } 
-//    @FXML
-//    void gotoSupplier(MouseEvent event) throws IOException {
-//        ChangeMyScene.to("Store_Supplier.fxml", "Store - Signal Icon", event);
-//    }
-//    @FXML
-//    void gotoBrands(MouseEvent event) throws IOException {
-//        ChangeMyScene.to("Store_Brands.fxml", "Store - Signal Icon", event);
-//    }
-//    @FXML
-//    void gotoCategory(MouseEvent event) throws IOException {
-//        ChangeMyScene.to("Store_Category.fxml", "Store - Signal Icon", event);
-//    }
-//    @FXML
-//    void gotoUnits(MouseEvent event) throws IOException {
-//        ChangeMyScene.to("Store_Units.fxml", "Store - Signal Icon", event);
-//    }
+    @FXML
+    void gotoStock(MouseEvent event) throws IOException {
+        ChangeMyScene.to("Store.fxml", "Store - Signal Icon", event);
+    }
+    @FXML
+    void gotoSupplier(MouseEvent event) throws IOException {
+        ChangeMyScene.to("Store_Supplier.fxml", "Store - Signal Icon", event);
+    }
+    @FXML
+    void gotoBrands(MouseEvent event) throws IOException {
+        ChangeMyScene.to("Store_Brands.fxml", "Store - Signal Icon", event);
+    }
+    @FXML
+    void gotoCategory(MouseEvent event) throws IOException {
+        ChangeMyScene.to("Store_Category.fxml", "Store - Signal Icon", event);
+    }
+    @FXML
+    void gotoUnits(MouseEvent event) throws IOException {
+        ChangeMyScene.to("Store_Units.fxml", "Store - Signal Icon", event);
+    }
+
     /**
      * Initializes the controller class.
      */
