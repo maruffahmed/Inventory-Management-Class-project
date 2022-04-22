@@ -13,7 +13,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -30,11 +29,20 @@ public class LoginController implements Initializable {
     @FXML
     private TextField password;
     @FXML
-    private void UserLogin() {
-        String userName = this.emailAddress.getText();
-        String pass = this.password.getText();
-        System.out.println("Username : " + userName);
-        System.out.println("Password : " + pass);
+    private void UserLogin(MouseEvent event) throws IOException {
+//        String userName = this.emailAddress.getText();
+//        String pass = this.password.getText();
+//        System.out.println("Username : " + userName);
+//        System.out.println("Password : " + pass);
+
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+     
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+        stage.setTitle("Home - Signal Icon");
+        stage.show();
 
     }
     @FXML
