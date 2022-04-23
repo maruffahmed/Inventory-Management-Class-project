@@ -49,7 +49,7 @@
             </AnchorPane>
             <AnchorPane onMouseClicked="#gotoSells" prefHeight="78.0" prefWidth="100.0" style="-fx-background-color: #f0dfdf;">
                <children>
-                  <Label layoutX="3.0" layoutY="44.0" prefHeight="18.0" prefWidth="93.0" style="-fx-alignment: center;" text="Sells" />
+                  <Label layoutX="3.0" layoutY="44.0" prefHeight="18.0" prefWidth="93.0" style="-fx-alignment: center;" text="Sales" />
                   <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="36.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@assets/sellsicon.png" />
@@ -62,7 +62,7 @@
             </AnchorPane>
             <AnchorPane onMouseClicked="#gotoEmp" prefHeight="78.0" prefWidth="100.0">
                <children>
-                  <Label layoutX="3.0" layoutY="44.0" prefHeight="18.0" prefWidth="93.0" style="-fx-alignment: center;" text="Employes" />
+                  <Label layoutX="3.0" layoutY="44.0" prefHeight="18.0" prefWidth="93.0" style="-fx-alignment: center;" text="Employees" />
                   <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="36.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@assets/peopleicon.png" />
@@ -88,7 +88,7 @@
             </AnchorPane>
          </children>
       </VBox>
-      <Label layoutX="124.0" layoutY="37.0" text="Sells">
+      <Label layoutX="124.0" layoutY="37.0" text="Sales">
          <font>
             <Font size="25.0" />
          </font>
@@ -100,7 +100,7 @@
             <TableColumn fx:id="productTCat" onEditCommit="#onCatEditChange" prefWidth="125.60006713867188" text="Category" />
             <TableColumn fx:id="productTBrand" onEditCommit="#onBrandEditChange" prefWidth="127.20001220703125" text="Brand" />
             <TableColumn fx:id="productTQuantity" onEditCommit="#onQuntityEditChange" prefWidth="80.79998779296875" text="Quantity" />
-            <TableColumn fx:id="productTSellP" onEditCommit="#onSellPriceEditChange" prefWidth="118.4000244140625" text="Sell price" />
+            <TableColumn fx:id="productTSellP" onEditCommit="#onSellPriceEditChange" prefWidth="118.4000244140625" text="Sale price" />
             <TableColumn fx:id="productSellsId" prefWidth="18.4000244140625" text="Sells ID" />
          </columns>
       </TableView>

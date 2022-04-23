@@ -21,6 +21,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Region;
@@ -41,6 +42,10 @@ public class LoginController implements Initializable {
     private TextField emailAddress;
     @FXML
     private TextField password;
+    
+    @FXML
+    private Label loginErrorMsg;
+    
     @FXML
     private void UserLogin(MouseEvent event) throws IOException {
         String userName = this.emailAddress.getText();
@@ -65,6 +70,8 @@ public class LoginController implements Initializable {
                     stage.setScene(scene);
                     stage.setTitle("Home - Signal Icon");
                     stage.show();
+                }else{
+                    loginErrorMsg.setText("Credential error. Please try again.");
                 }
 //                else{
 //                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "Login Failed", ButtonType.OK);
