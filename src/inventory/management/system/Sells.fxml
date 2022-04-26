@@ -124,7 +124,6 @@
             </GridPane>
             <VBox prefHeight="200.0" prefWidth="228.0" spacing="20.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#refreshSellList" prefHeight="44.0" prefWidth="217.0" text="Refresh" />
                   <Button mnemonicParsing="false" onAction="#productRemoveAction" prefHeight="49.0" prefWidth="230.0" style="-fx-background-color: f0dfdf;" text="Remove" />
                   <Button mnemonicParsing="false" onAction="#productAddAction" prefHeight="49.0" prefWidth="230.0" style="-fx-background-color: e0f9fc;" text="Add" />
                </children>

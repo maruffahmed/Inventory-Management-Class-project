@@ -121,9 +121,10 @@ public class SellsController implements Initializable {
         statement.setInt(2,quantity);
         statement.execute();
         productQuantity.setText("");
+        refreshSellList();
     }
     @FXML
-    void refreshSellList(ActionEvent event){
+    void refreshSellList(){
         //        Fetch all product from database
         String productQuery = "SELECT * FROM sells INNER JOIN products ON sells.productId=products.productId";
         ResultSet productSet = null;
@@ -302,6 +303,8 @@ public class SellsController implements Initializable {
         }
 //        End fatching product
         productIdDropDown.getItems().addAll(productsIds);
+        
+        refreshSellList();
         
     }    
     
